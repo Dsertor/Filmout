@@ -1,16 +1,16 @@
 <main class="w-full relative bg-amber-400 flex flex-col h-[600px]">
-    <main-trailer-film class="grid grid-cols-[1fr_1096px_1fr] relative h-full"></main-trailer-film>
-<!--
+    <main-trailer-film class="grid grid-cols-[1fr_1096px_1fr] relative h-full" [mainFilm]="filmTrailers()[0]" ></main-trailer-film>
+
     <section class="absolute h-[9.375rem] w-full bottom-[-2.50rem] z-20 px-50">
         <div class="h-full w-full flex gap-5">
-            @for (film of filmTrailers(); track film.id) {
+            @for (film of filmTrailers().slice(1); track film.id) {
 
                 <trailer-film-article [filmInfo]="film"></trailer-film-article>
 
             }
 
         </div>
-    </section> -->
+    </section>
 </main>
 
 

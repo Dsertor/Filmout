@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { DiscoverFilmsMapped } from '../../../../interfaces/DiscoverFilmsMapped';
 
 @Component({
   selector: 'main-trailer-film',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './main-trailer-film.component.html',
   styleUrl: './main-trailer-film.component.css',
 })
-export class MainTrailerFilmComponent { }
+export class MainTrailerFilmComponent {
+
+  public mainFilm = input<DiscoverFilmsMapped>();
+
+ }

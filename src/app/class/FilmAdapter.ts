@@ -19,8 +19,9 @@ export class FilmAdapter{
         return{
             id: movie.id,
             title: movie.title,
-            backdrop_path: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`,
-            runtime: filmDetails.runtime
+            backdrop_path: `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`,
+            runtime: filmDetails.runtime,
+            sinopsis: movie.overview
           }
     }
 

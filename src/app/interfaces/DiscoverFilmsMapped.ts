@@ -1,8 +1,9 @@
 
 
 export interface DiscoverFilmsMapped {
-    id: number
+    id: number,
     title: string,
-    backdrop_path: string
-    runtime: number
+    backdrop_path: string,
+    runtime: number,
+    sinopsis: string
 }
