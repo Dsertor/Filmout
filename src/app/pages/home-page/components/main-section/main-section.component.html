@@ -1,31 +1,6 @@
-<main class="w-full relative bg-amber-400 flex flex-col">
-    <section class="absolute z-10 h-full w-2/7 flex flex-col justify-center items-start ml-50 gap-4">
-        <h1 class="text-5xl font-bold text-gray-200 pb-2">The Hateful Eight</h1>
-        <p class="w-full text-lg text-neutral-400 overflow-hidden text-ellipsis line-clamp-3">A few years after the
-            Civil War, a stagecoach travels through the wintry landscape of Wyoming. The passengers, bounty hunter John
-            Ruth and his fugitive Daisy Domergue, are on their way to Red Rock, where Ruth will hand Domergue over to
-            the authorities. Along the way, they encounter two strangers: Major Marquis Warren (Samuel L. Jackson), a
-            former Union soldier turned bounty hunter with a notorious reputation, and Chris Mannix (Walton Goggins), a
-            Southern renegade who claims to be the new sheriff of the town. As a blizzard approaches, the four take
-            refuge in Minnie's Haberdashery, a stagecoach stop at a mountain pass. Upon arriving, they come across four
-            unfamiliar faces: the Mexican Bob (Demian Bichir), Oswaldo Mobray (Tim Roth), the executioner of Red Rock,
-            cowboy Joe Gage (Michael Madsen), and Confederate General Sanford Smithers (Bruce Dern). As the storm rages
-            over the mountain stop, the eight travelers realize they might not make it to Red Rock after all.</p>
-        <div class="w-full flex gap-4 pt-5">
-            <button
-                class="px-10 py-4 rounded-xl font-bold text-neutral-100 transform transition-transform duration-200 hover:scale-110 hover:cursor-pointer "
-                style="background-color: #ff2a01;">Watch
-                now</button>
-            <button
-                class="px-10 py-4 rounded-xl text-neutral-100 transform transition-transform duration-200 hover:scale-110 hover:cursor-pointer "
-                style="background-color: #313131;">Favourite</button>
-        </div>
-    </section>
-    <div class="absolute h-full w-full bg-cover
-    [background-image:linear-gradient(to_bottom,rgba(17,24,39,0.7),rgba(3,7,18,1)),linear-gradient(to_right,rgba(0,0,0,0.9),rgba(0,0,0,0),rgba(0,0,0,0.9))]
-    "></div>
-    <img src="assets/images/the-hatefull-eight.webp" alt="Image from the movie The Hateful Eight"
-        class="max-h-[600px] w-full object-cover">
+<main class="w-full relative bg-amber-400 flex flex-col h-[600px]">
+    <main-trailer-film class="grid grid-cols-[1fr_1096px_1fr] relative h-full"></main-trailer-film>
+<!--
     <section class="absolute h-[9.375rem] w-full bottom-[-2.50rem] z-20 px-50">
         <div class="h-full w-full flex gap-5">
             @for (film of filmTrailers(); track film.id) {
@@ -35,7 +10,7 @@
             }
 
         </div>
-    </section>
+    </section> -->
 </main>
 
 

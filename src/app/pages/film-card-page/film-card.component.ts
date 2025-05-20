@@ -16,14 +16,19 @@ export class FilmCardComponent implements OnInit {
 
   public filmService = inject(FilmsService);
   public filmInfo = signal<FilmCardMapped | null>(null);
+
   ngOnInit(): void {
     console.log(this.queryParams)
     const filmId = this.filmService.currentFilmId();
     if(!filmId) return
-    console.log(filmId);
 
-    this.filmService.getFilmById(filmId).subscribe((response) =>
+    this.filmService.getFilmById(filmId).subscribe((response) =>{
+      console.log(response);
+
       this.filmInfo.set(response)
+    }
+
+
 
     )
 
