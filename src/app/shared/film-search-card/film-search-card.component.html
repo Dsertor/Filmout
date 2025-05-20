@@ -1,0 +1,19 @@
+<article class="p-4 ">
+
+    <a [routerLink]="['/film', film()?.title | RouteFilm: true]" class="flex gap-2" (click)="this.filmService.saveCurrentIdFilm(film()?.id)">
+        <section class="flex-1 ">
+            <img [src]="film()?.poster_path" alt="" class="rounded-sm">
+        </section>
+        <section class="flex-2">
+            <h2 class="font-bold text-lg text-neutral-300">{{film()?.title}} <span
+                    class="text-sm text-neutral-300">{{this.hasReleaseDate()}}</span></h2>
+            <div class="flex gap-1 flex-wrap">
+                @for (genre of film()?.genre_ids; track $index) {
+                <div class="text-xs/2 border text-amber-300 border-amber-300 px-1 py-1 rounded-sm flex-wrap">{{genre}}
+                </div>
+                }
+            </div>
+        </section>
+    </a>
+
+</article>

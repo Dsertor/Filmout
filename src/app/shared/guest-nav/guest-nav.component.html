@@ -1,0 +1,44 @@
+<a routerLink="" class="cursor-pointer">
+    <h2 class="text-2xl font-bold text-white">Film<span style="color: #ff5836;">Out</span> </h2>
+</a>
+<nav class="flex gap-5 h-full items-center">
+    @for (category of navCategories; track $index) {
+    <a [routerLink]="[`${category.path}`]"
+        class="nav-link text-neutral-200 h-full flex items-center border-transparent border-t-[.25rem]"
+        routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">{{category.name}}</a>
+    }
+
+</nav>
+<div class="flex gap-2 items-center h-full ">
+    <div class="h-full flex items-center gap-2">
+        <div class="flex items-center">
+            <div class="h-full w-full fixed top-0 left-0 z-50 flex flex-col items-center bg-black/50 transition-opacity duration-300"
+                (click)="onBlur()" [ngClass]="{
+                'opacity-100 pointer-events-auto': isPressed(),
+                'opacity-0 pointer-events-none': !isPressed()
+              }">
+
+                <input type="text" [formControl]="searchControl"
+                    class="h-10  mt-20 bg-white rounded-xl px-3 text-xl text-neutral-900 outline-none transition-[width] duration-500 ease-in-out placeholder:text-neutral-300"
+                    (click)="$event.stopPropagation()" [style.width]="isPressed() ? '50%' : '1rem'"
+                    placeholder="Search for a film... e.g. Pulp Fiction, Inception, Matrix" #inputRef />
+                <section class="bg-black/70 w-[50%] mt-3 rounded-xl grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-4 ">
+
+
+                        @for (film of searchFilms(); track film.id) {
+
+                            <film-search-card [film]="film" class="h-[50%]"></film-search-card>
+                        }
+
+                </section>
+
+            </div>
+            <div class="w-5">
+                <lucide-icon name="search" class="h-5 w-full text-lg hover:cursor-pointer" [ngClass]="{'text-neutral-900 hidden': isPressed(),
+                        'text-neutral-300': !isPressed()}" (click)="onFocus()"></lucide-icon>
+            </div>
+
+        </div>
+        <button class="text-neutral-300 hover:cursor-pointer">Login</button>
+    </div>
+</div>

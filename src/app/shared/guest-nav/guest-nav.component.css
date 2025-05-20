@@ -1,0 +1,4 @@
+.isActive{
+    border-top: 4px solid #ff2a01;
+    background: linear-gradient(to bottom, rgba(255, 42, 1, 0.15), transparent);
+}
