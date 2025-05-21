@@ -1,11 +1,12 @@
-<main class="w-full relative bg-amber-400 flex flex-col h-[600px]">
-    <main-trailer-film class="grid grid-cols-[1fr_1096px_1fr] relative h-full" [mainFilm]="filmTrailers()[0]" ></main-trailer-film>
+<main class="w-full relative bg-amber-400 flex flex-col h-[400px] md:h-[600px]">
+    <main-trailer-film class="grid relative h-full px-3 grid-cols-1 lg:px-0 lg:grid-cols-[1fr_1024px_1fr] xl:grid-cols-[1fr_1280px_1fr]  "
+        [mainFilm]="filmTrailers()[0]"></main-trailer-film>
 
-    <section class="absolute h-[9.375rem] w-full bottom-[-2.50rem] z-20 px-50">
-        <div class="h-full w-full flex gap-5">
-            @for (film of filmTrailers().slice(1); track film.id) {
+    <section class="hidden absolute h-[9.375rem] w-full bottom-[-2.50rem] z-20 lg:grid px-3 lg:px-0 xl:grid-cols-[1fr_1280px_1fr] lg:grid-cols-[1fr_1024px_1fr] ">
+        <div class="h-full w-full flex gap-5 col-start-2 col-end-3">
+            @for (film of filmTrailers().slice(1,5); track film.id) {
 
-                <trailer-film-article [filmInfo]="film"></trailer-film-article>
+            <trailer-film-article [filmInfo]="film"></trailer-film-article>
 
             }
 
@@ -15,4 +16,4 @@
 
 
 <div class="h-[300px]"></div>
-<button [routerLink]="['film/','inception' ]" routerLinkActive="router-link-active" >JAJA</button>
+<button [routerLink]="['film/','inception' ]" routerLinkActive="router-link-active">JAJA</button>

@@ -68,9 +68,11 @@ export class FilmsService {
       })
       .pipe(
         map((response) => response.results),
-        map((movies) => movies.slice(0, 5)),
+        map((movies) => movies.slice(0, 6)),
         concatMap((movies: Result[]) => {
+          console.log(movies);
           const filmsMapped = movies.map((movie) => {
+
             return this.getFilmDetails(movie.id).pipe(
               map((details: FilmsDetailsRaw) =>
                 FilmAdapter.adaptDiscoverFilmsFromRaw(movie, details)
